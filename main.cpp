@@ -8,7 +8,6 @@
 #include "header/class.hpp"
 #include "Moks/header/Moks.hpp"
 
-
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -48,12 +47,10 @@ int main(int argc, char *argv[])
 
     // Creation et ajout des sprites dans le Manager
     mySpriteManager.addSprite("Background", 0, 0, 1, 1, path1);
-    //mySpriteManager.addSprite("Brique", 0, 0, 0.2, 0.2, path2);
-
     
     int posY=0;
 
-    for (int i2=0; i2 < 19; i2++)
+    for (int i2=0; i2 < 5; i2++)
     {
         int posX=0;
         for (int i=0; i < 19; i++)
@@ -66,7 +63,6 @@ int main(int argc, char *argv[])
         posY = posY + 25;
     }
 
-    
     // Chargement des textures de tous les sprites
     mySpriteManager.loadAllTexture(renderer);
   
