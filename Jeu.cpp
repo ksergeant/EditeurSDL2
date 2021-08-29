@@ -113,15 +113,19 @@ void Jeu::chargerPartie()
         }
 }
 */
-bool Jeu::getEtat(){
-    
+bool Jeu::getEtat()
+{
     return etatDuJeu;
 }
 
 void Jeu::getName()
 {
+    cout<< "\nNom du Jeu " << this->name <<endl;
+}
 
-    return name;
+void Jeu::setName(string pName)
+{
+    this->name = pName;
 }
 
 void Jeu::afficheMenu(){

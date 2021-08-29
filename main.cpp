@@ -16,17 +16,20 @@ int main(int argc, char *argv[])
     // Chargement du fichier de sauvegarde du jeu
     
     boost::shared_ptr<Jeu> myGame (boost::make_shared<Jeu>());
-
+    
     cout << "Chargement des données \n";
     // Chargement des données
     std::ifstream ifile("Save");
     boost::archive::text_iarchive iTextArchive(ifile);
     iTextArchive >> myGame;     // désérialisation dans d
-
-    myGame->afficheMenu();
+    
+    myGame->getName();
+   // myGame->setName("Sword Art Online");
+   // myGame->getName();
+    //myGame->afficheMenu();
     
     // Sauvegarde du l'objet jeu dans un fichier
-    cout << "Sauvegarde des données \n";
+    cout << "\nSauvegarde des données \n";
     std::ofstream ofile("Save");
     boost::archive::text_oarchive oTextArchive(ofile);
     oTextArchive << myGame;    // sérialisation de d

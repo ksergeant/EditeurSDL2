@@ -42,6 +42,8 @@ class Jeu{
         void MenuLoop();
         void Save();
         void Load();
+        void getName();
+        void setName(string pName);
         template<class Archive>
 
         void serialize(Archive& ar, const unsigned int version){
