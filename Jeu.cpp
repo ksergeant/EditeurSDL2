@@ -120,7 +120,7 @@ bool Jeu::getEtat()
 
 void Jeu::getName()
 {
-    cout<< "\nNom du Jeu " << this->name <<endl;
+    cout<< "\nNom du Jeu : " << this->name <<endl;
 }
 
 void Jeu::setName(string pName)
