@@ -7,11 +7,32 @@
 #include "header/fonction.hpp"
 #include "header/class.hpp"
 #include "Moks/header/Moks.hpp"
+#include "Jeu.hpp"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+    // Chargement du fichier de sauvegarde du jeu
+    
+    boost::shared_ptr<Jeu> myGame (boost::make_shared<Jeu>());
+
+    cout << "Chargement des données \n";
+    // Chargement des données
+    std::ifstream ifile("Save");
+    boost::archive::text_iarchive iTextArchive(ifile);
+    iTextArchive >> myGame;     // désérialisation dans d
+
+    myGame->afficheMenu();
+    
+    // Sauvegarde du l'objet jeu dans un fichier
+    cout << "Sauvegarde des données \n";
+    std::ofstream ofile("Save");
+    boost::archive::text_oarchive oTextArchive(ofile);
+    oTextArchive << myGame;    // sérialisation de d
+
+    /* 
+    cout <<endl;
     // Initialisation de la SDL2
     cout << "Start\n";
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
@@ -88,6 +109,6 @@ int main(int argc, char *argv[])
     SDL_DestroyWindow(window);
     IMG_Quit();
     SDL_Quit();
-
+*/
     return 0;
 }
